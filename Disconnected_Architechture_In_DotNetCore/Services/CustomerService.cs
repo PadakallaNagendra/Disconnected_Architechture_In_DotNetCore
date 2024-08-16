@@ -49,7 +49,7 @@ namespace Disconnected_Architechture_In_DotNetCore.Services
                     objBookingDto.Add(obj);
                 }
                 return objBookingDto;
-            }
+        }
 
 
         //GetCustomerById

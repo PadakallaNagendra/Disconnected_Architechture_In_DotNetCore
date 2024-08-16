@@ -12,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICustomerRepositary, CustomerRepositary>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IDashboardRepositary, DashRepositary>();
+builder.Services.AddScoped<IDashboardService, DashboardServices>();
 //builder.Services.AddCors(options =>
 //{
 //    options.AddDefaultPolicy(builder =>
