@@ -14,15 +14,15 @@ builder.Services.AddScoped<ICustomerRepositary, CustomerRepositary>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IDashboardRepositary, DashRepositary>();
 builder.Services.AddScoped<IDashboardService, DashboardServices>();
-//builder.Services.AddCors(options =>
-//{
-//    options.AddDefaultPolicy(builder =>
-//    {
-//        builder.AllowAnyOrigin();
-//        builder.AllowAnyMethod();
-//        builder.AllowAnyHeader();
-//    });
-//});
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin();
+        builder.AllowAnyMethod();
+        builder.AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
