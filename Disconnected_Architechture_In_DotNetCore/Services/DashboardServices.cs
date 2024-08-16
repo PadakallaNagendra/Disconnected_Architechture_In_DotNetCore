@@ -25,13 +25,13 @@ namespace Disconnected_Architechture_In_DotNetCore.Services
             return true;
         }
 
-        public async Task<List<Dashboard>> GetAllDashboard()
+        public async Task<List<DashboardDTO>> GetAllDashboard()
         {
-            List<Dashboard> objBookingDto = new List<Dashboard>();
+            List<DashboardDTO> objBookingDto = new List<DashboardDTO>();
             var result = await _dashboardRepositary.GetAllDashboard();
             foreach (Dashboard bookingobj in result)
             {
-                Dashboard obj = new Dashboard();
+                DashboardDTO obj = new DashboardDTO();
                 obj.position = bookingobj.position;
                 obj.name = bookingobj.name;
                 obj.weight = bookingobj.weight;
@@ -42,7 +42,7 @@ namespace Disconnected_Architechture_In_DotNetCore.Services
             return objBookingDto;
         }
 
-        public async Task<Dashboard> GetDashboardbyId(int id)
+        public async Task<DashboardDTO> GetDashboardbyId(int id)
         {
             var bookingobj = await _dashboardRepositary.GetDashboardbyId(id);
 
@@ -53,7 +53,7 @@ namespace Disconnected_Architechture_In_DotNetCore.Services
             bookingdtoobj.symbol = bookingobj.symbol;
             bookingdtoobj.location = bookingobj.location;
 
-            return bookingobj;
+            return bookingdtoobj;
         }
 
         public async Task<bool> RemoveDashboardDetailsById(int id)
